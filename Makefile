@@ -17,7 +17,6 @@ $(TARGET): $(OBJS)
 	@echo "-----------------------------"
 	$(CC) $^ -o $@
 
-# 編譯 src 裡的 cpp -> bin 裡的 o
 $(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CC) $(CFLAGS) $< -o $@
 
