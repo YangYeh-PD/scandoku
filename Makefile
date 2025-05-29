@@ -22,7 +22,7 @@ $(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 .PHONY: clean
 clean:
-	-rm -f $(BIN_DIR)/*.o $(TARGET)
+	-rm -f $(BIN_DIR)/*.o $(BIN_DIR)/*.jpg $(TARGET)
 
 # Dependency Chain
 $(BIN_DIR)/solve.o: $(SRC_DIR)/solve.cpp $(SRC_DIR)/sudoku.h
