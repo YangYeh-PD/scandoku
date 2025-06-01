@@ -35,7 +35,7 @@ for contour in contours:
     area = cv.contourArea(contour)
     if area > 1000: # avoid the noice
         peri = cv.arcLength(contour, True)
-        approx = cv.approxPolyDP(contour, 0.05 * peri, True)
+        approx = cv.approxPolyDP(contour, 0.02 * peri, True)
         if len(approx) == 4 and area > max_area:
             sudoku_contour = approx
             max_area = area
@@ -43,11 +43,11 @@ for contour in contours:
 src_pts = reorder_points(sudoku_contour)
 dst_pts = np.array([
     [0, 0],
-    [900, 0],
-    [900, 900],
-    [0, 900]
+    [252, 0],
+    [252, 252],
+    [0, 252]
 ], dtype="float32")
 
 M = cv.getPerspectiveTransform(src_pts, dst_pts)
-warped = cv.warpPerspective(thresh, M, (900, 900))
+warped = cv.warpPerspective(gray, M, (252, 252))
 cv.imwrite("../bin/sudoku_warpped.jpg", warped)

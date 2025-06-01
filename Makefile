@@ -2,6 +2,7 @@ CC = g++
 CFLAGS = -c -Wall
 SRC_DIR = src
 BIN_DIR = bin
+DIGITS_DIR = digits
 
 TARGET = $(BIN_DIR)/solve
 
@@ -22,7 +23,7 @@ $(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 .PHONY: clean
 clean:
-	-rm -f $(BIN_DIR)/*.o $(BIN_DIR)/*.jpg $(TARGET)
+	-rm -f $(BIN_DIR)/*.o $(BIN_DIR)/*.jpg $(DIGITS_DIR)/*.jpg $(TARGET)
 
 # Dependency Chain
 $(BIN_DIR)/solve.o: $(SRC_DIR)/solve.cpp $(SRC_DIR)/sudoku.h
