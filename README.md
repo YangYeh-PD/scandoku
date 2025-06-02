@@ -1,7 +1,7 @@
 # 📘 Scandoku
-**Scandoku** aims to simplify the Sudoku-solving experience by letting users take a photo of any puzzle and get the solution instantly—no manual 
-input required. It also serves as a demonstration of combining computer vision, machine learning, and algorithmic problem-solving into a practical 
-application.
+**Scandoku** aims to simplify the Sudoku-solving experience by letting users take a photo of any puzzle and get the solution instantly with no 
+manual input required. It also serves as a demonstration of combining computer vision, machine learning, and algorithmic problem-solving into a 
+practical application.
 
 ## 📌 Features
 - Solve 9×9 Sudoku puzzles using backtracking.
@@ -13,9 +13,7 @@ application.
 - Some digit recognitions might be wrong.
 
 ## 🔭 Future Work
-- Automatic Control.
-- Build GUI for result. (SDL3)
-- Performance improvement. (MRV Method)
+- Solving performance improvement. (MRV Method)
 
 ## 📝 Reference
 - [Sudoku Wikipedia](https://en.wikipedia.org/wiki/Sudoku).

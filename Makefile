@@ -5,21 +5,28 @@ BIN_DIR = bin
 DIGITS_DIR = digits
 
 TARGET = $(BIN_DIR)/solve
-
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
-
 OBJS = $(patsubst $(SRC_DIR)/%.cpp,$(BIN_DIR)/%.o,$(SRCS))
 
-all: $(TARGET)
+# Compile and Run
+all: $(TARGET) run
 
 $(TARGET): $(OBJS)
-	@echo "-----------------------------"
-	@echo "Creating executable for solve"
-	@echo "-----------------------------"
+	@echo "--- Creating executable for solve ---"
 	$(CC) $^ -o $@
 
 $(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CC) $(CFLAGS) $< -o $@
+
+run:
+	@echo "--- Running detect.py ---"
+	python3 $(SRC_DIR)/detect.py
+	@echo "--- Running split.py ---"
+	python3 $(SRC_DIR)/split.py
+	@echo "--- Running ocr.py ---"
+	python3 $(SRC_DIR)/ocr.py
+	@echo "--- Running solve ---"
+	$(TARGET)
 
 .PHONY: clean
 clean:

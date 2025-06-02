@@ -26,13 +26,13 @@ def is_blank(img, ratio = 0.9250):
     else:
         return False
 
-with open("../test/problem", "w") as file:  # clear the problem.txt
+with open("./test/problem", "w") as file:  # clear the problem.txt
     pass
-file = open("../test/problem", "a")
+file = open("./test/problem", "a")
 
 for i in range(9):  # row
     for j in range(9):  # column
-        img = cv.imread(f"../digits/cell_{i}_{j}.jpg")
+        img = cv.imread(f"./digits/cell_{i}_{j}.jpg")
         img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
         if is_blank(img):
             file.write('0')

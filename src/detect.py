@@ -66,4 +66,4 @@ dst_pts = np.array([
 
 M = cv.getPerspectiveTransform(src_pts, dst_pts)
 warped = cv.warpPerspective(gray, M, (324, 324))
-cv.imwrite("../bin/sudoku_warpped.jpg", warped)
+cv.imwrite("./bin/sudoku_warpped.jpg", warped)

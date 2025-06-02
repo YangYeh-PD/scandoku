@@ -16,7 +16,7 @@
 
 import cv2 as cv
 
-img = cv.imread("../bin/sudoku_warpped.jpg")
+img = cv.imread("./bin/sudoku_warpped.jpg")
 
 cell_size = 324 // 9
 for i in range(9):  # row
@@ -24,5 +24,5 @@ for i in range(9):  # row
         x = j * cell_size
         y = i * cell_size
         cell = img[y + 4:y + cell_size - 4, x + 4:x + cell_size - 4]
-        filename = f"../digits/cell_{i}_{j}.jpg"
+        filename = f"./digits/cell_{i}_{j}.jpg"
         cv.imwrite(filename, cell)
