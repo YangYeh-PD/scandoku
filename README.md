@@ -1,16 +1,21 @@
-# 📘 Sudoku Solver with C++
-This project implements a **Sudoku puzzle solver** written in C++. 
-It is designed to be efficient and reliable, capable of solving the hardest puzzles with minimal clues (as few as 17 given digits).
+# 📘 Scandoku
+**Scandoku** aims to simplify the Sudoku-solving experience by letting users take a photo of any puzzle and get the solution instantly—no manual 
+input required. It also serves as a demonstration of combining computer vision, machine learning, and algorithmic problem-solving into a practical 
+application.
 
 ## 📌 Features
 - Solve 9×9 Sudoku puzzles using backtracking.
-- Using OpenCV to find Sudoku problem contour and split into 81 cells for recognition.
+- Using [OpenCV](https://github.com/opencv/opencv) to find Sudoku problem contour and split into 81 cells for recognition.
+- Integrated with [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) for image-based printed digits recognition.
+
+## 🚫 Limitations
+- It currently cannot judge whether the problem has only one solution or many solutions.
+- Some digit recognitions might be wrong.
 
 ## 🔭 Future Work
-- Ready for integration with image-based digit recognition. (CNN)
-- Build GUI for result. (SDL3)
 - Automatic Control.
-- Performance testing. (MRV Method)
+- Build GUI for result. (SDL3)
+- Performance improvement. (MRV Method)
 
-## 📜 License
-This project is open-source and available under the MIT License.
+## 📝 Reference
+- [Sudoku Wikipedia](https://en.wikipedia.org/wiki/Sudoku).

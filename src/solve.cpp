@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include <cstdlib>
 
 #include "sudoku.h"
 using namespace std;
@@ -9,8 +10,17 @@ bool solve(Sudoku, Sudoku &);
 int main(int argc, char *argv[]) {
     int num;
     Sudoku ques, ans;
-    ifstream inFile("test/problem", ios::in);
-    ofstream outFile("test/solution", ios::out);
+    ifstream inFile("./test/problem", ios::in);
+    if (!inFile) {
+        cout << "Failed to open problem file" << endl;
+        exit(1);
+    }
+    ofstream outFile("./test/solution", ios::out);
+    if (!outFile) {
+        cout << "Failed to open solution file" << endl;
+        exit(1);
+    }
+
 
     for (int i = 0; i < Sudoku::Sudokusize; i++) {
         inFile >> num;
