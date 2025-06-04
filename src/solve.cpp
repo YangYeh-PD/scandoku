@@ -46,11 +46,11 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-// Solve Sudoku Recursively
+// Solve Sudoku with naive BackTracking
 bool solve(Sudoku question, Sudoku &answer) {
     int firstZero;
     firstZero = question.getFirstZeroIndex();
-    if (firstZero == -1) {  // End Condition
+    if (firstZero == -1) {  // Ending Condition
         if (question.isCorrect()) {
             answer = question;
             return true;

@@ -28,20 +28,20 @@ bool Sudoku::checkUnity(int arr[]) {
     }
     return true;
 }
-// Check if the elements before index are all unique
+// Check if the elements is legal in the current Sudoku board
 bool Sudoku::isLegal(int index) {
-    // check the row
+    // check the local same row
     for (int column = (index / 9) * 9; column < ((index / 9) + 1) * 9;
          column++) {
         if (column != index && map[column] == map[index]) return false;
     }
-    // check the column
+    // check the local same column
     for (int row = (index % 9); row < (index % 9) + Sudokusize; row += 9) {
         if (row != index && map[row] == map[index]) {
             return false;
         }
     }
-    // check the cells
+    // check the local same cells
     int row = index / 9;
     int column = index % 9;
     int start_loc = (row / 3) * 27 + (column / 3) * 3;

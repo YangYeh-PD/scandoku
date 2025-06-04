@@ -57,6 +57,7 @@ for contour in contours:
             max_area = area
 
 src_pts = reorder_points(sudoku_contour)
+# Resolution 28 x 28
 dst_pts = np.array([
     [0, 0],
     [324, 0],
