@@ -1,4 +1,7 @@
 class Sudoku {
+    friend int main(int argc, char *argv[]);
+    friend bool solve(Sudoku question, Sudoku &answer);
+
    public:
     Sudoku();
     Sudoku(const int init_map[]);

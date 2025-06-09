@@ -1,6 +1,6 @@
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
-#include <cstdlib>
 
 #include "sudoku.h"
 using namespace std;
@@ -21,10 +21,9 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-
     for (int i = 0; i < Sudoku::Sudokusize; i++) {
         inFile >> num;
-        ques.setElement(i, num);
+        ques.map[i] = num;
     }
 
     // Tell you whether a Sudoku question has a solution
@@ -32,8 +31,8 @@ int main(int argc, char *argv[]) {
     if (solve(ques, ans)) {
         cout << "Solvable!\n";
         for (int i = 0; i < Sudoku::Sudokusize; i++) {
-            cout << ans.getElement(i) << " ";
-            outFile << ans.getElement(i) << " ";
+            cout << ans.map[i] << " ";
+            outFile << ans.map[i] << " ";
             if (i % 9 == 8) {
                 cout << endl;
                 outFile << endl;
@@ -59,7 +58,7 @@ bool solve(Sudoku question, Sudoku &answer) {
         }
     } else {  // Recursive Relation
         for (int num = 1; num <= 9; num++) {
-            question.setElement(firstZero, num);
+            question.map[firstZero] = num;
             if (!question.isLegal(firstZero)) {
                 continue;
             } else if (solve(question, answer)) {

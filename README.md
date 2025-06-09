@@ -9,7 +9,7 @@ practical application.
 - Integrated with [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) for image-based printed digits recognition.
 
 ## Installation
-Sicne the project is built based on OpenCV and Tesseract, we have to download these Python modules.
+Since the project is built based on OpenCV and Tesseract, we have to download these Python modules.
 ### Linux (Ubuntu)
 ```bash
 sudo apt update
